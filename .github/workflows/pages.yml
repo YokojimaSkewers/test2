@@ -50,5 +50,3 @@ jobs:
         uses: actions/deploy-pages@v1
       # delete-artifact
       - uses: geekyeggo/delete-artifact@v1
-        with:
-          name: my-artifact
