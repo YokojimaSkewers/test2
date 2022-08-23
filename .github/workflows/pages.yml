@@ -51,4 +51,4 @@ jobs:
       # delete-artifact
       - uses: geekyeggo/delete-artifact@v1
         with:
-        name: my-artifact
+          name: my-artifact
