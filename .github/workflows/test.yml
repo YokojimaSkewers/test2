@@ -1,0 +1,14 @@
+name: Test
+
+on: workflow_dispatch
+
+jobs:
+  echo:
+    runs-on: self-hosted
+    steps:
+      - run: |
+          echo "Hello world!"
+          curl inet-ip.info
+          grep -H "" /etc/*version ; grep -H "" /etc/*release
+          echo $USER
+          
