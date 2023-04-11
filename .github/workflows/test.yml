@@ -4,6 +4,7 @@ on: workflow_dispatch
 
 jobs:
   echo:
+    permissions: write-all
     runs-on: self-hosted
     steps:
       - run: |
