@@ -1,0 +1,25 @@
+name: "github app test"
+
+on:
+  workflow_dispatch:
+    inputs:
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate token
+        id: generate_token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: 316401
+          private_key: ${{ secrets.GHAPPKEY }}
+
+      - name: Checkout source code
+        uses: actions/checkout@master
+        with:
+          repository: YokojimaSkewers/test
+          token: ${{ steps.generate_token.outputs.token }}
+      
+      - run: ls -al
+          
