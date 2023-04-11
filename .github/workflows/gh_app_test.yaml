@@ -21,6 +21,7 @@ jobs:
         uses: actions/checkout@master
         with:
           repository: YokojimaSkewers/test
+          ref: main
           token: ${{ steps.generate_token.outputs.token }}
       
       - run: ls -al
