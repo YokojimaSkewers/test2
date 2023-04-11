@@ -4,8 +4,7 @@ on: workflow_dispatch
 
 jobs:
   echo:
-    permissions: write-all
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - run: |
           echo "Hello world!"
