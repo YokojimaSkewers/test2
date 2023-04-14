@@ -3,8 +3,24 @@ name: "calling"
 on: workflow_dispatch
 
 jobs:
+  get-pat:
+    runs-on: ubuntu-latest
+    outputs:
+      pat: ${{ steps.generate_token.outputs.token  }}
+    steps:
+      - name: Generate token
+        id: generate_token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: 316401
+          private_key: ${{ secrets.GHAPPKEY }}
+          
   calling:
+    needs: get-pat
     uses: YokojimaSkewers/test/.github/workflows/called.yml@main
+    secrets:
+      envPAT: ${{ need.get-pat.outputs.pat }}
+
   echo:
     runs-on: ubuntu-latest
     steps:
