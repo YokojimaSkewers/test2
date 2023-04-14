@@ -1,0 +1,11 @@
+name: "calling"
+
+on: workflow_dispatch
+
+jobs:
+  calling:
+    uses: YokojimaSkewers/test/.github/workflows/called.yml@main
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "aaa"
